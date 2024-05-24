@@ -6,8 +6,8 @@ import { Provider } from 'react-redux';
 
 export default function StoreProvider({ children }) {
     const storeRef = useRef();
+    setInitialLocalStorage();
     if (!storeRef.current) {
-        setInitialLocalStorage();
         // Create the store instance the first time this renders
         storeRef.current = makeStore();
     }
